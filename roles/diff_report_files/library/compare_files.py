@@ -4,14 +4,7 @@ from ansible.module_utils.basic import AnsibleModule
 import json
 import subprocess
 
-def install_dependencies():
-    try:
-        subprocess.check_call(["pip", "install", "deepdiff"])
-    except subprocess.CalledProcessError as e:
-        raise Exception(f"Failed to install dependencies: {e}")
-
 def compare_files():
-    install_dependencies()
 
     from deepdiff import DeepDiff
 
